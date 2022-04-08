@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+class Nodo{
+    public: 
+    Nodo* sig;
+    int elemento;
+    Nodo(int e){
+        elemento=e;
+        sig=nullptr;
+    }
+};
+class Lista{//locomotora
+    Nodo* inicio;
+    size_t t;
+    public:
+        Lista(){
+            inicio=nullptr;
+            t=0;
+        }
+    //insertar vagones
+    void push_front(int elemento){
+        Nodo* n=new Nodo(elemento);
+        if(t==0)
+            inicio=n;
+        else{
+            n->sig=inicio;
+            inicio=n;            
+        }
+        ++t;
+    }
+    void print(){
+        Nodo* aux=inicio;
+        while(aux->sig!=nullptr){
+            cout<<aux->elemento<<" ";
+            aux=aux->sig;
+        }
+        cout<<aux->elemento<<"\n";
+    }    
+};
+
+int main(){
+    Lista lista;
+    for(size_t i=0;i<10;++i)
+        lista.push_front(i);
+    lista.print();
+    return 0;
+}
+//asignacion
+//1-obtener objeto en posicion = at()
+//2-eliminar en posicion(n), 
+//3-eliminar al inicio
+//4-eliminar al final
+//5-ordenar elementos(n2)
+//6-buscar por valor(n)
+//7-invertir lista(n2)
+//8-buscar solo elementos pares
+//9-listar con uso de lambdas
+//10-listar de forma recursiva
