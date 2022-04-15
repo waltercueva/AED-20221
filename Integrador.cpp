@@ -75,7 +75,7 @@ public:
 		}		
 	}
 };
-
+// Ejemplo de entidades adicionales
 class Estudiante {
 public://TO-DO private
 	string  nombre;
@@ -114,7 +114,7 @@ public:
 	//....
 	
 };
-// Ejemplo de entidades adicionales
+
 class Controladora {
 	ListaEstudiante* registros;
 public:
