@@ -31,16 +31,16 @@ class Tree {
 			cout << tmp->data << " ";
 			print(tmp->r);
 		}
-		void print(Node<G>* tmp) {//preOrden
+		void preOrden(Node<G>* tmp) {//preOrden
 			if (tmp == nullptr)return;
 			cout << tmp->data << " ";
-			print(tmp->l);			
-			print(tmp->r);
+			preOrden(tmp->l);
+			preOrden(tmp->r);
 		}
-		void print(Node<G>* tmp) {//postOrden
+		void postOrden(Node<G>* tmp) {//postOrden
 			if (tmp == nullptr)return;			
-			print(tmp->l);
-			print(tmp->r);
+			postOrden(tmp->l);
+			postOrden(tmp->r);
 			cout << tmp->data << " ";
 		}
 
@@ -53,5 +53,3 @@ int main() {
 	enteros.print();
 	return 0;
 }
-
-
